@@ -83,6 +83,7 @@ pada data preparation di proyek predictive analytics dilakukan beberapa tahapan 
 | `description`    | Banyak *missing values* (262) dan memerlukan *text preprocessing* kompleks.   |
 | `published_year` | Walaupun hanya 6 nilai kosong, dihapus karena korelasi rendah dengan rating.   |
 | `num_pages`      | Memiliki nilai kosong dan korelasi lemah terhadap target prediksi.             |
+Jumlh data setelah dilkukan pembersihan data menjadi 6600 Baris dengan 5 Kolom ('title', 'authors',	'categories', 'average_rating',	'ratings_count')
 
 > Catatan: Fitur-fitur yang dihapus umumnya tidak memberikan nilai tambah signifikan terhadap model, baik karena tipe datanya tidak sesuai, terlalu banyak nilai kosong, atau memiliki korelasi rendah terhadap target yang diprediksi.
  - **Mengecek Missing value**
