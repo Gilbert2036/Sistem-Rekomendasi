@@ -30,6 +30,9 @@ Informasi   | Keterangan
 Link        | https://www.kaggle.com/datasets/dylanjcastillo/7k-books-with-metadata?select=books.csv
 Lisensi     | CC0: Public Domain
 Size        | 4.14 MB
+Jumlah Baris        | 6810
+Jumlah Kolom        | 12
+
 
 | Kolom            | Jumlah Missing Values |
 |------------------|------------------------|
@@ -85,18 +88,16 @@ pada data preparation di proyek predictive analytics dilakukan beberapa tahapan 
  - **Mengecek Missing value**
  Tujuannya dilakukan proses missing value agar dataset menjadi bersih dari fitur fitur yang valuenya kosong karena dapat menimbulkan hasil akurasi yang kurang baik ataupun hasil bias. untuk mengecek missing value menggunakan fitur *isnull* dan juga fitur *sum()* untuk melihat jumlah data.pada saat fitur itu dijalankan maka akan di cek semua data yang berisi missing value pada dataset. setelah dilakukan pengencekan missing valeu ternyata banyak data missing.sebelum menghapus missing value pada data. terlebih dahulu hapus fitur yang tidak akan di gunakan pada sistem rekomendasi. setelah fitur telah di hapus maka di lakukan penghapusan missing value pada data yang akan di gunakan untuk sistem rekomendasi.
 
+- **Membuang Data Duplikat pada Variabel `preparation`**
+Setelah proses pembersihan missing value dan penghapusan fitur yang tidak relevan, langkah selanjutnya adalah memastikan bahwa data yang digunakan benar-benar unik. Hal ini dilakukan dengan menghapus baris yang memiliki nilai duplikat pada kolom `title`.
+
  - **Membuat variabel preparation**
 Membuat variabel preparation yang berisi dataframe books_clean kemudian mengurutkan berdasarkan title. kemudian membuang data duplikat pada variable preparation. karena akan menggunakan data unik untuk dimasukkan ke dalam proses pemodelan. pada proyek kali ini akan membuang duplikat data berdasarkan fitur title.
 
-- **Mengonversi data series menjadi dalam bentuk list**
-  konversi variable-variable seperti titlr, authors, categories, average rating dan ratings count menjadi bentuk list
-
 - **Membuat dictionary pada data**
 Pembuatan Dictionary ini bertujuan agar model hanya memproses dan memprediksi berdasarkan fitur-fitur yang memang digunakan dalam sistem rekomendasi. Dalam proyek ini, data seperti 'books title', 'books authors', 'books categories', 'books average rating', dan 'books ratings count' disusun ke dalam sebuah dictionary bernama 'books_clear'.
-- **Membuang Data Duplikat pada Variabel `preparation`
-Setelah proses pembersihan missing value dan penghapusan fitur yang tidak relevan, langkah selanjutnya adalah memastikan bahwa data yang digunakan benar-benar unik. Hal ini dilakukan dengan menghapus baris yang memiliki nilai duplikat pada kolom `title`.
 
-- ** Konversi Data Series Menjadi List
+- **Konversi Data Series Menjadi List**
 
 Setelah memastikan data bersih dan tidak duplikat, langkah selanjutnya adalah mengonversi beberapa kolom dari bentuk *Series* menjadi *list*. Hal ini dilakukan agar data dapat lebih mudah diproses, terutama saat akan dimasukkan ke dalam struktur dictionary atau digunakan dalam algoritma pemodelan. Kolom-kolom yang dikonversi antara lain:
 
