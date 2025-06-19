@@ -83,7 +83,6 @@ pada data preparation di proyek predictive analytics dilakukan beberapa tahapan 
 | `description`    | Banyak *missing values* (262) dan memerlukan *text preprocessing* kompleks.   |
 | `published_year` | Walaupun hanya 6 nilai kosong, dihapus karena korelasi rendah dengan rating.   |
 | `num_pages`      | Memiliki nilai kosong dan korelasi lemah terhadap target prediksi.             |
-Jumlh data setelah dilkukan pembersihan data menjadi 6600 Baris dengan 5 Kolom ('title', 'authors',	'categories', 'average_rating',	'ratings_count')
 
 > Catatan: Fitur-fitur yang dihapus umumnya tidak memberikan nilai tambah signifikan terhadap model, baik karena tipe datanya tidak sesuai, terlalu banyak nilai kosong, atau memiliki korelasi rendah terhadap target yang diprediksi.
  - **Mengecek Missing value**
@@ -100,7 +99,8 @@ Pembuatan Dictionary ini bertujuan agar model hanya memproses dan memprediksi be
 
 - **Konversi Data Series Menjadi List**
 
-Setelah memastikan data bersih dan tidak duplikat, langkah selanjutnya adalah mengonversi beberapa kolom dari bentuk *Series* menjadi *list*. Hal ini dilakukan agar data dapat lebih mudah diproses, terutama saat akan dimasukkan ke dalam struktur dictionary atau digunakan dalam algoritma pemodelan. Kolom-kolom yang dikonversi antara lain:
+Setelah memastikan data bersih dan tidak duplikat jumlah data setelah dilkukan pembersihan data menjadi 6600 Baris dengan 5 Kolom ('title', 'authors',	'categories', 'average_rating',	'ratings_count')
+, langkah selanjutnya adalah mengonversi beberapa kolom dari bentuk *Series* menjadi *list*. Hal ini dilakukan agar data dapat lebih mudah diproses, terutama saat akan dimasukkan ke dalam struktur dictionary atau digunakan dalam algoritma pemodelan. Kolom-kolom yang dikonversi antara lain:
 
 - `title` → `books_title`
 - `authors` → `books_authors`
